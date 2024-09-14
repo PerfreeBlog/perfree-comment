@@ -1,0 +1,50 @@
+:root{
+    --dialog-success-bg: #f0f9eb;
+    --dialog-success-border: #e1f3d8;
+    --dialog-success-color: #67c23a;
+
+    --dialog-warning-bg: #fdf6ec;
+    --dialog-warning-border: #faecd8;
+    --dialog-warning-color: #e6a23c;
+
+    --dialog-error-bg: #fef0f0;
+    --dialog-error-border: #fde2e2;
+    --dialog-error-color: #f56c6c;
+
+    --dialog-padding: 8px 10px;
+    --dialog-border: 1px solid;
+    --dialog-transition: top 0.3s, left 0.3s;
+}
+.dialog {
+    display: none;
+    position: fixed;
+    padding: var(--dialog-padding);
+    border: var(--dialog-border);
+    transition: var(--dialog-transition);
+    z-index: 9999999;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.dialog.show {
+    display: block;
+}
+.dialog.success {
+    background-color: var(--dialog-success-bg);
+    border-color: var(--dialog-success-border);
+    color: var(--dialog-success-color);
+}
+.dialog.warning {
+    background-color: var(--dialog-warning-bg);
+    border-color: var(--dialog-warning-border);
+    color: var(--dialog-warning-color);
+}
+.dialog.error {
+    background-color: var(--dialog-error-bg);
+    border-color: var(--dialog-error-border);
+    color: var(--dialog-error-color);
+}
+.dialog .dialog-icon{
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+}

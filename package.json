@@ -1,0 +1,22 @@
+{
+  "name": "perfree-comment",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/js/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode production",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emoji-mart/data": "^1.2.1",
+    "emoji-mart": "^5.6.0",
+    "emoji-mart-vue-fast": "^15.0.2",
+    "emoji-picker-element": "^1.22.6",
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
