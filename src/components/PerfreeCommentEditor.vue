@@ -46,13 +46,13 @@ let showEmojiPanel = ref(false);
 const editor = ref();
 const emojiPicker = ref();
 let comment = ref({
-  content: "",
+  content: '',
   articleId: props.articleId,
   pid: props.pid,
   topPid: props.topPid,
-  website: '',
-  email: '',
-  userName: ''
+  website: null,
+  email: null,
+  userName: null
 })
 let canCommentSubmit = ref(true);
 let submitLoading = ref(false);
@@ -123,13 +123,13 @@ function submitComment() {
     if (res.code === 200) {
       DialogService.openDialog('评论发表成功', 'success');
       comment.value = {
-        content: "",
+        content: '',
         articleId: props.articleId,
         pid: props.pid,
         topPid: props.topPid,
-        website: '',
-        email: '',
-        userName: ''
+        website: null,
+        email: null,
+        userName: null
       }
       emit('commentSubmit', props.pid, props.topPid)
     }else {

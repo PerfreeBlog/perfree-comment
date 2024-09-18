@@ -75,7 +75,7 @@
 </template>
 
 <script setup>
-import '../common/dialog/dialog.css'
+  import '../common/dialog/dialog.css'
   import {ref} from "vue";
   import {getLoginUserApi, pageByArticleIdApi, pageByTopPid} from "../common/commentApi";
   import {displayTime} from "../common/utils";
