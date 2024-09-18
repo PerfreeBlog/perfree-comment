@@ -3,7 +3,7 @@
  <div>
     <div class="perfree-comment">
       <perfree-comment-editor :article-id="articleId" :user-id="user?.id" :pid="-1" :top-pid="-1" @comment-submit="commentSubmitSuccess"></perfree-comment-editor>
-      <div class='comment-list-box' v-if="showCommentList">
+      <div class='comment-list-box' v-if="showCommentList === 'true'">
 
         <div class='comment-list'>
           <div v-if="commentListLoading" class="comment-list-loading">

@@ -1,7 +1,7 @@
 {
   "name": "perfree-comment",
-  "private": true,
-  "version": "1.0.0",
+  "description": "PerfreeBlog评论组件",
+  "version": "1.2.0",
   "type": "module",
   "main": "dist/perfree-comment.js",
   "files": [
@@ -13,6 +13,14 @@
     "comment",
     "web-component"
   ],
+  "homepage": "https://github.com/perfree/perfree-comment.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perfree/perfree-comment.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "author": "Perfree",
   "license": "MIT",
   "scripts": {
