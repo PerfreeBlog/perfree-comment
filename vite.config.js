@@ -43,8 +43,19 @@ export default defineConfig(({mode })=> {
       lib: {
         entry: 'src/main.js',
         formats: ['es', 'cjs', 'iife'],
-        name: 'CustomElement'
+        name: 'PerfreeComponent'
+      },
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            // 自定义输出的 CSS 文件名
+            if (assetInfo.name === 'style.css') {
+              return 'perfree-comment.css'; // 自定义 CSS 文件名称
+            }
+            return assetInfo.name;
+          }
+        }
       }
-    }
+    },
   }
 })

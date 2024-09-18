@@ -1,13 +1,25 @@
 {
   "name": "perfree-comment",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
-  "main": "dist/js/main.js",
+  "main": "dist/perfree-comment.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "component",
+    "comment",
+    "web-component"
+  ],
+  "author": "Perfree",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build --mode production",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^5.1.3",

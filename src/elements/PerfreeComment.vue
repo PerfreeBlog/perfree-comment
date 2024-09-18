@@ -75,11 +75,11 @@
 </template>
 
 <script setup>
-  import '../common/dialog/dialog.css'
+import '../common/dialog/dialog.css'
   import {ref} from "vue";
   import {getLoginUserApi, pageByArticleIdApi, pageByTopPid} from "../common/commentApi";
   import {displayTime} from "../common/utils";
-  import PerfreeCommentEditor from '../components/PerfreeCommentEditor.ce.vue'
+  import PerfreeCommentEditor from '../components/PerfreeCommentEditor.vue'
 
   const props = defineProps(['articleId', 'showCommentList'])
   let commentList = ref([]);
@@ -194,37 +194,37 @@
 
 <style>
 .perfree-comment{
-    --color-primary: #646CFF;
-    --color-danger: #F56C6C;
-    --color-border: #efefef;
-    --color-bg-white: #ffffff;
-    --color-bg-content: #f5f7fa;
-    --color-border-focus: #b5b5b5;
-    --color-font: #303133;
-    --color-font-regular: #606266;
+  --color-primary: #646CFF;
+  --color-danger: #F56C6C;
+  --color-border: #efefef;
+  --color-bg-white: #ffffff;
+  --color-bg-content: #f5f7fa;
+  --color-border-focus: #b5b5b5;
+  --color-font: #303133;
+  --color-font-regular: #606266;
 
-    --font-size: 14px;
-    --font-family: "Microsoft YaHei","微软雅黑","PingFang SC","Hiragino Sans GB";
+  --font-size: 14px;
+  --font-family: "Microsoft YaHei","微软雅黑","PingFang SC","Hiragino Sans GB";
 
 
 }
 .perfree-comment{
-    color: var(--color-font);
-    font-size: var(--font-size);
-    font-family: var( --font-family);
-  }
+  color: var(--color-font);
+  font-size: var(--font-size);
+  font-family: var( --font-family);
+}
 .comment-detail-box{
-    display: flex;
-    margin-top: 16px;
-    flex-wrap: wrap;
-    width: 100%;
+  display: flex;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .comment-child-detail-box{
-    padding-left: 50px;
-    width: calc(100% - 50px);
+  padding-left: 50px;
+  width: calc(100% - 50px);
 }
 .comment-detail-avatar-box img{
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .comment-detail-avatar-box span{
   display: inline-block;
@@ -238,8 +238,8 @@
   color: var(--color-font-regular);
 }
 .comment-detail-msg-box{
-    width: calc(100% - 45px);
-    padding-left: 10px;
+  width: calc(100% - 45px);
+  padding-left: 10px;
 }
 .comment-detail-content{
   margin-top: 5px;
@@ -254,52 +254,52 @@
   opacity: .85;
 }
 .comment-detail-name{
-    font-weight: 500;
-    font-size: 14px;
+  font-weight: 500;
+  font-size: 14px;
 }
 .comment-detail-info{
-    position: relative;
+  position: relative;
 }
 .comment-detail-time{
-    font-size: 12px;
-    color: var(--color-font-regular);
-    margin-left: 10px;
+  font-size: 12px;
+  color: var(--color-font-regular);
+  margin-left: 10px;
 }
 .comment-detail-reply-btn{
-    position: absolute;
-    right: 3px;
-    display: none;
-    font-size: 12px;
-    background: var(--color-primary);
-    border-radius: 3px;
-    padding: 2px 6px 2px 6px;
-    color: white;
-    cursor: pointer;
+  position: absolute;
+  right: 3px;
+  display: none;
+  font-size: 12px;
+  background: var(--color-primary);
+  border-radius: 3px;
+  padding: 2px 6px 2px 6px;
+  color: white;
+  cursor: pointer;
 }
 .comment-detail-box:hover .comment-detail-reply-btn {
-    display: inline-block;
+  display: inline-block;
 }
 .comment-reply-box{
-    flex-direction: column;
-    width: 100%;
+  flex-direction: column;
+  width: 100%;
 }
 .comment-mention{
-    font-size: 13px;
-    font-weight: 600;
+  font-size: 13px;
+  font-weight: 600;
 }
 .comment-detail-content img{
-    vertical-align: middle;
-    padding-left: 2px;
-    padding-right: 2px;
+  vertical-align: middle;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .comment-not-list{
-    text-align: center;
-    margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 .comment-show-more{
-    cursor: pointer;
-    font-size: 12px;
-    padding-left: 50px;
+  cursor: pointer;
+  font-size: 12px;
+  padding-left: 50px;
 }
 .comment-pagination{
   padding: 0;
@@ -325,4 +325,6 @@
   display: flex;
   justify-content: center;
 }
+
+
 </style>
