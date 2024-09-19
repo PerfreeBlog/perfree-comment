@@ -82,6 +82,7 @@
   import PerfreeCommentEditor from '../components/PerfreeCommentEditor.vue'
 
   const props = defineProps(['articleId', 'showCommentList'])
+  const emit = defineEmits(['commentSubmitSuccess'])
   let commentList = ref([]);
   let pageNo = ref(1);
   let pageSize = ref(10);
@@ -168,6 +169,7 @@
   }
 
   function commentSubmitSuccess(pid, topPid) {
+    emit('commentSubmitSuccess', pid, topPid)
     if (topPid === -1) {
       pageNo.value = 1;
       queryCommentList();

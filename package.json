@@ -1,7 +1,7 @@
 {
   "name": "perfree-comment",
   "description": "PerfreeBlog评论组件",
-  "version": "1.2.2",
+  "version": "1.2.5",
   "type": "module",
   "main": "dist/perfree-comment.js",
   "files": [
