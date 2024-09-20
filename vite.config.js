@@ -42,7 +42,6 @@ export default defineConfig(({mode })=> {
       minify: 'terser',
       lib: {
         entry: 'src/main.js',
-        formats: ['es', 'cjs', 'iife'],
         name: 'PerfreeComponent'
       },
       rollupOptions: {
