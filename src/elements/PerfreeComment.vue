@@ -213,6 +213,40 @@
 
 
 }
+emoji-picker {
+  color-scheme: light;
+  --background: #fff;
+  --border-color: #e0e0e0;
+  --indicator-color: #385ac1;
+  --input-border-color: #999;
+  --input-font-color: #111;
+  --input-placeholder-color: #999;
+  --outline-color: #999;
+  --category-font-color: #111;
+  --button-active-background: #e6e6e6;
+  --button-hover-background: #d9d9d9;
+  --emoji-size: 1.375rem;
+  --emoji-padding: 0.5rem;
+  --category-emoji-size: var(--emoji-size);
+  --category-emoji-padding: var(--emoji-padding);
+  --indicator-height: 3px;
+  --input-border-radius: 0.5rem;
+  --input-border-size: 1px;
+  --input-font-size: 1rem;
+  --input-line-height: 1.5;
+  --input-padding: 0.25rem;
+  --num-columns: 8;
+  --outline-size: 2px;
+  --border-size: 1px;
+  --border-radius: 0;
+  --skintone-border-radius: 1rem;
+  --category-font-size: 1rem;
+  display: flex;
+  width: min-content;
+  height: 400px;
+}
+
+
 .perfree-comment{
   color: var(--color-font);
   font-size: var(--font-size);
