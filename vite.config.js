@@ -10,7 +10,7 @@ export default defineConfig(({mode })=> {
     plugins: [vue({
       template: {
         compilerOptions: {
-          isCustomElement: tag => tag === 'perfree-comment' || tag === 'emoji-picker'
+          isCustomElement: tag => tag === 'perfree-comment'
         }
       }
     })],

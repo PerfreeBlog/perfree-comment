@@ -1,8 +1,8 @@
 <template>
 
  <div>
-    <div class="perfree-comment">
-      <perfree-comment-editor :article-id="articleId" :user-id="user?.id" :pid="-1" :top-pid="-1" @comment-submit="commentSubmitSuccess"></perfree-comment-editor>
+    <div v-bind:class="{'perfree-comment': true, 'dark': theme === 'dark'}">
+      <perfree-comment-editor :article-id="articleId" :user-id="user?.id" :pid="-1" :top-pid="-1" @comment-submit="commentSubmitSuccess" :theme="theme"></perfree-comment-editor>
       <div class='comment-list-box' v-if="showCommentList === 'true'">
 
         <div class='comment-list'>
@@ -22,8 +22,8 @@
                       <span class='comment-detail-time'>{{ displayTime(item.createTime) }}</span>
                       <span class='comment-detail-reply-btn' @click="replyClick(item)">回复</span>
                   </div>
-                  <div class='comment-detail-content'>{{ item.content }}</div>
-                  <perfree-comment-editor v-if="item.showReply" @close-reply="closeReply" @comment-submit="commentSubmitSuccess" :user-id="user?.id" :pid="item.id" :top-pid="item.id" :article-id="item.articleId"></perfree-comment-editor>
+                  <div class='comment-detail-content' v-html=" item.content"></div>
+                  <perfree-comment-editor v-if="item.showReply" @close-reply="closeReply" @comment-submit="commentSubmitSuccess" :user-id="user?.id" :pid="item.id" :top-pid="item.id" :article-id="item.articleId" :theme="theme"></perfree-comment-editor>
                 </div>
               </div>
 
@@ -40,11 +40,11 @@
                             <span class='comment-detail-time'>{{ displayTime(childItem.createTime) }}</span>
                             <span class='comment-detail-reply-btn' @click="replyClick(childItem)">回复</span>
                         </div>
-                        <div class='comment-detail-content'><span class='comment-mention'>@{{item.userInfo?item.userInfo.userName: item.userName}} </span> {{ childItem.content }}</div>
+                        <div class='comment-detail-content'><span class='comment-mention'>@{{item.userInfo?item.userInfo.userName: item.userName}} </span> <span v-html="childItem.content"></span></div>
                       </div>
                     </div>
 
-                    <perfree-comment-editor v-if="childItem.showReply" @close-reply="closeReply" @comment-submit="commentSubmitSuccess" :user-id="user?.id" :article-id="item.articleId" :pid="childItem.id" :top-pid="item.id"></perfree-comment-editor>
+                    <perfree-comment-editor v-if="childItem.showReply" @close-reply="closeReply" @comment-submit="commentSubmitSuccess" :user-id="user?.id" :article-id="item.articleId" :pid="childItem.id" :top-pid="item.id" :theme="theme"></perfree-comment-editor>
                   </div>
                   <div class="comment-show-more" v-if="item.childNum > (item.children? item.children.length : 0)">
                    <div  @click="loadChildComment(item)" v-if="!item.childLoading && (!item.pageNo || item.pageNo < 1)">
@@ -81,7 +81,7 @@
   import {displayTime} from "../common/utils";
   import PerfreeCommentEditor from '../components/PerfreeCommentEditor.vue'
 
-  const props = defineProps(['articleId', 'showCommentList'])
+  const props = defineProps(['articleId', 'showCommentList', 'theme'])
   const emit = defineEmits(['commentSubmitSuccess'])
   let commentList = ref([]);
   let pageNo = ref(1);
@@ -202,7 +202,6 @@
   --color-primary: #646CFF;
   --color-danger: #F56C6C;
   --color-border: #efefef;
-  --color-bg-white: #ffffff;
   --color-bg-content: #f5f7fa;
   --color-border-focus: #b5b5b5;
   --color-font: #303133;
@@ -210,47 +209,13 @@
 
   --font-size: 14px;
   --font-family: "Microsoft YaHei","微软雅黑","PingFang SC","Hiragino Sans GB";
-
-
 }
-emoji-picker {
-  color-scheme: light;
-  --background: #fff;
-  --border-color: #e0e0e0;
-  --indicator-color: #385ac1;
-  --input-border-color: #999;
-  --input-font-color: #111;
-  --input-placeholder-color: #999;
-  --outline-color: #999;
-  --category-font-color: #111;
-  --button-active-background: #e6e6e6;
-  --button-hover-background: #d9d9d9;
-  --emoji-size: 1.375rem;
-  --emoji-padding: 0.5rem;
-  --category-emoji-size: var(--emoji-size);
-  --category-emoji-padding: var(--emoji-padding);
-  --indicator-height: 3px;
-  --input-border-radius: 0.5rem;
-  --input-border-size: 1px;
-  --input-font-size: 1rem;
-  --input-line-height: 1.5;
-  --input-padding: 0.25rem;
-  --num-columns: 8;
-  --outline-size: 2px;
-  --border-size: 1px;
-  --border-radius: 0;
-  --skintone-border-radius: 1rem;
-  --category-font-size: 1rem;
-  display: flex;
-  width: min-content;
-  height: 400px;
-}
-
 
 .perfree-comment{
   color: var(--color-font);
   font-size: var(--font-size);
   font-family: var( --font-family);
+  background: var(--background);
 }
 .comment-detail-box{
   display: flex;
